@@ -165,26 +165,10 @@
     </section>
 
     <!-- SUBSCRIBE -->
-    <section class="section" id="subscribe" aria-labelledby="subscribe-title">
-      <h2 id="subscribe-title" class="section-title">GET THE LATEST</h2>
-      <form class="subscribe-form" onsubmit="event.preventDefault();showThanks();">
-        <label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
-        <div class="grid grid--small">
-          <label>First Name<input type="text" name="firstName" placeholder="First name"></label>
-          <label>Postal Code<input type="text" name="postal" placeholder="ZIP/Postal"></label>
-        </div>
-        <div class="grid grid--small">
-          <label>Country<input type="text" name="country" placeholder="Country"></label>
-          <label>Birth Date<input type="date" name="dob"></label>
-        </div>
-        <button class="cta" type="submit">Subscribe</button>
-      </form>
-
-      <dialog id="thanks">
-        <button class="dialog-close" onclick="this.closest('dialog').close()">×</button>
-        <h3>Thank you for signing up!</h3>
-        <p>Welcome to the mailing list.</p>
-      </dialog>
+    <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/Vs7Twz/klaviyo.js?company_id=Vs7Twz'></script>
+          <script type="text/javascript"> 
+          //Initialize Klaviyo object on page load
+          !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}(); </script>
     </section>
   </main>
 
