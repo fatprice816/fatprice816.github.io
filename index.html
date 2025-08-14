@@ -19,14 +19,122 @@
 
   <main>
     <!-- HERO / WORDMARK -->
-    <section class="hero" id="home" aria-label="Hero">
-      <h1 class="wordmark">FAT PRICE</h1>
-      <div class="platforms">
-        <a class="pill" href="https://music.apple.com/us/artist/fat-price/1724204878" target="" rel="noopener">Apple Music</a>
-        <a class="pill" href="https://open.spotify.com/artist/3KyOs79eYZyv3uovm6Xlg5" target="" rel="noopener">Spotify</a>
-      </div>
-      <div class="scroll-indicator" aria-hidden="true"></div>
-    </section>
+<section class="hero" id="home" aria-label="Hero">
+  <!-- Background video -->
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <!-- Replace the src with your actual file path -->
+    <source src="media/animated_trippy_coffee.webm" type="video/webm" />
+    <!-- Optional MP4 fallback for browsers that don't support WebM -->
+    <source src="media/animated_trippy_coffee.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Content overlay -->
+  <div class="hero-content">
+    <h1 class="wordmark">FAT PRICE</h1>
+    <div class="platforms">
+      <a class="pill" href="https://music.apple.com/us/artist/fat-price/1724204878" rel="noopener">Apple Music</a>
+      <a class="pill" href="https://open.spotify.com/artist/3KyOs79eYZyv3uovm6Xlg5" rel="noopener">Spotify</a>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true"></div>
+  </div>
+</section>
+
+<style>
+  /* Container */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden; /* hide video overflow during scaling */
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  /* Background video fills hero */
+  .hero .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* crop to fill without distortion */
+    object-position: center;     /* keep subject centered */
+    filter: saturate(1.1) contrast(1.05);
+    z-index: -1;                 /* sit behind content */
+  }
+
+  /* Overlay content */
+  .hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: #fff;
+  }
+
+  /* Optional: add a subtle dark gradient for readability */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0.25) 30%,
+      rgba(0,0,0,0.35) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wordmark {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    line-height: 1;
+    letter-spacing: 0.06em;
+    margin: 0 0 1rem;
+    font-weight: 800;
+  }
+
+  .platforms {
+    display: inline-flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pill {
+    display: inline-block;
+    padding: .6rem 1rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: background .2s ease, transform .2s ease;
+  }
+  .pill:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
+
+  .scroll-indicator {
+    width: 2px; height: 36px; margin: 1.25rem auto 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,.7), rgba(255,255,255,0));
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scroll-indicator::before {
+    content: "";
+    position: absolute; left: 0; right: 0;
+    height: 10px; width: 100%;
+    background: #fff;
+    border-radius: 2px;
+    animation: scrollPulse 1.6s infinite ease-in-out;
+  }
+  @keyframes scrollPulse {
+    0% { top: 0; opacity: 0; }
+    20% { opacity: 1; }
+    100% { top: 26px; opacity: 0; }
+  }
+</style>
 
     <!-- TOUR -->
     <section class="section" id="tour" aria-labelledby="tour-title">
