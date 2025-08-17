@@ -40,6 +40,63 @@
   </div>
 </section>
 
+	  <!-- SOCIAL LINKS -->
+<div class="social-links">
+  <a href="https://m.youtube.com/channel/UCNMygBiqjy-l7rYnhx1pgOA" target="_blank" aria-label="YouTube">
+    <!-- YouTube Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.7 124.1c-6.3-23.7-24.9-42.4-48.6-48.7C465.3 64 288 64 288 64s-177.3 0-213.1 10.4c-23.7 6.3-42.3 25-48.6 48.7C16 159.9 16 256 16 256s0 96.1 10.3 131.9c6.3 23.7 24.9 42.4 48.6 48.7C110.7 448 288 448 288 448s177.3 0 213.1-10.4c23.7-6.3 42.3-25 48.6-48.7C560 352.1 560 256 560 256s0-96.1-10.3-131.9zM232 334.9V177.1L368 256 232 334.9z"/></svg>
+  </a>
+
+  <a href="https://music.apple.com/" target="_blank" aria-label="Apple Music">
+    <!-- Apple Music Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M318.7 268.6c-26.2 0-48.6 18.3-48.6 47.1 0 27.4 20.6 45.1 48.6 45.1 24.9 0 49.2-16.8 49.2-47.1 0-28.9-20.1-45.1-49.2-45.1zM203.6 219c-26.2 0-48.6 18.3-48.6 47.1 0 27.4 20.6 45.1 48.6 45.1 24.9 0 49.2-16.8 49.2-47.1 0-28.9-20.1-45.1-49.2-45.1zM408.1 32H87.9C39.4 32 0 71.4 0 119.9v272.2C0 440.6 39.4 480 87.9 480h320.2c48.5 0 87.9-39.4 87.9-87.9V119.9C496 71.4 456.6 32 408.1 32zm-86.7 303.5c-12.3 23.4-36.2 39.4-65.3 39.4-40.6 0-73.6-32.9-73.6-73.5 0-40.6 32.9-73.5 73.6-73.5 39.1 0 70.2 30.7 73.4 68.1h-48.2c-2.5-13.7-13.5-22.8-28.1-22.8-15.9 0-27.6 11.6-27.6 28.2 0 16.3 11.7 28.2 27.6 28.2 13.3 0 23.8-7.6 26.9-18.7h49.2c-.4 2.5-.9 4.9-1.4 7.3z"/></svg>
+  </a>
+
+  <a href="https://open.spotify.com/" target="_blank" aria-label="Spotify">
+    <!-- Spotify Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.6 362.2c-5.2 8.6-16.3 11.4-24.9 6.2-68.2-41.7-154.2-51-255.3-27.6-9.8 2.2-19.6-4-21.8-13.8s4-19.6 13.8-21.8c108.1-24.5 201.9-13.1 277.9 31.5 8.6 5.2 11.4 16.3 6.2 24.9zm34.9-65.7c-6.5 10.7-20.5 14.2-31.2 7.7-78-47.1-196.5-60.8-288.4-32.9-11.6 3.6-24-2.7-27.6-14.3-3.6-11.6 2.7-24 14.3-27.6 101.1-31.9 229.7-16.8 318.8 38.2 10.7 6.5 14.2 20.5 7.7 31.2zm2.9-70.8c-89.6-53.1-237.9-58.1-325.6-31.5-13 4.1-26.9-3-31-16-4.1-13 3-26.9 16-31 98.3-30.7 260.6-24.7 362.9 35.5 12.1 7.2 16.1 22.9 8.9 35-7.2 12-22.9 16.1-35 8.9z"/></svg>
+  </a>
+</div>
+
+<!-- STYLES -->
+<style>
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .social-links a {
+    color: #111;
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    transform: scale(1.15);
+    color: #e63946; /* default hover color (red), change per icon if desired */
+  }
+
+  .social-links svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .social-links a {
+      color: #eee;
+    }
+    .social-links a:hover {
+      color: #1DB954; /* Spotify green works well in dark mode */
+    }
+  }
+</style>
+
 <style>
   /* Container */
   .hero {
