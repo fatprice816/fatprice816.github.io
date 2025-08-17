@@ -300,94 +300,93 @@
     }
   </script>
 
-	<!-- CONTACT ME — drop-in block -->
-<section id="contact" aria-labelledby="contact-title" class="contact-block">
-  <h2 id="contact-title">Contact</h2>
-  <p class="lede">The fastest way to reach me is email.</p>
-
-  <address class="card">
-    <a
-      id="email-link"
-      class="btn primary"
-      href="mailto:fatprice@icloud.com?subject=Hello%20from%20your%20website&body=Hi%20Jonathan,%0D%0A%0D%0A">
-      Email Me
-    </a>
-
-    <button
-      type="button"
-      class="btn"
-      id="copy-email"
-      aria-describedby="copy-status"
-      data-email="fatprice@icloud.com">
-      Copy Email
-    </button>
-
-    <div class="plaintext">
-      Or email: <a href="mailto:fatpriceo@icloud.com">fatprice@icloud.com</a>
+	<!-- CONTACT ME SECTION -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>If you’d like to get in touch, email me directly or use the button below.</p>
+    <div class="contact-actions">
+      <a href="mailto:fatprice@icloud.com" class="btn-primary">Email Me</a>
+      <a href="mailto:fatprice@icloud.com" class="plain-link">fatprice@icloud.com</a>
     </div>
-
-    <div id="copy-status" class="sr-only" aria-live="polite"></div>
-  </address>
+  </div>
 </section>
 
-<!-- Component-scoped styles -->
+<!-- STYLES -->
 <style>
-  .contact-block{
-    --radius:12px; --gap:1rem; --bg:rgba(255,255,255,.6);
-    --border:rgba(0,0,0,.08); --shadow:0 2px 14px rgba(0,0,0,.06);
-    max-width:720px; margin:3rem auto; padding:clamp(1rem,3vw,2rem)
+  .contact-section {
+    background: #f9f9f9; /* light neutral background */
+    padding: 4rem 1rem;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
   }
-  .contact-block h2{
-    margin:0 0 .25rem;
-    font:600 clamp(1.25rem,3vw,1.75rem)/1.2 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    letter-spacing:.2px
+
+  .contact-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111;
+    letter-spacing: -0.5px;
   }
-  .contact-block .lede{margin:0 0 1rem;color:#555}
-  .contact-block .card{
-    display:flex; flex-wrap:wrap; gap:var(--gap); align-items:center;
-    background:var(--bg); border:1px solid var(--border);
-    border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow)
+
+  .contact-section p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
-  .contact-block .btn{
-    appearance:none; border:1px solid var(--border);
-    padding:.75rem 1rem; border-radius:10px; font-weight:600;
-    text-decoration:none; cursor:pointer; line-height:1
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
-  .contact-block .btn:hover{transform:translateY(-1px)}
-  .contact-block .btn:active{transform:none}
-  .contact-block .btn.primary{background:#111;color:#fff;border-color:#111}
-  .contact-block .plaintext{font-size:.95rem;color:#444}
-  .contact-block .sr-only{
-    position:absolute;width:1px;height:1px;margin:-1px;border:0;padding:0;
-    clip:rect(0 0 0 0);overflow:hidden;white-space:nowrap
+
+  .btn-primary {
+    background: #111;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
   }
-  @media (prefers-color-scheme: dark){
-    .contact-block{--bg:rgba(0,0,0,.35);--border:rgba(255,255,255,.12);--shadow:0 6px 24px rgba(0,0,0,.35)}
-    .contact-block h2,.contact-block .lede{color:#e9e9e9}
-    .contact-block .btn.primary{background:#fff;color:#111;border-color:#fff}
-    .contact-block .plaintext{color:#ddd}
+
+  .btn-primary:hover {
+    background: #000;
+    transform: translateY(-1px);
+  }
+
+  .plain-link {
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: monospace;
+  }
+
+  .plain-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .contact-section {
+      background: #111;
+      border-color: #333;
+    }
+    .contact-section h2,
+    .contact-section p,
+    .plain-link {
+      color: #eee;
+    }
+    .btn-primary {
+      background: #fff;
+      color: #111;
+    }
+    .btn-primary:hover {
+      background: #e5e5e5;
+    }
   }
 </style>
-
-<!-- Copy-to-clipboard (optional but nice) -->
-<script>
-  (function(){
-    const btn = document.getElementById('copy-email');
-    const status = document.getElementById('copy-status');
-    if(btn && navigator.clipboard){
-      btn.addEventListener('click', async () => {
-        const email = btn.dataset.email;
-        try{
-          await navigator.clipboard.writeText(email);
-          status.textContent = 'Email copied to clipboard.';
-          btn.textContent = 'Copied ✓';
-          setTimeout(()=>{ btn.textContent='Copy Email'; status.textContent=''; }, 2000);
-        }catch(e){
-          status.textContent = 'Copy failed. Long-press or right-click to copy.';
-        }
-      });
-    }
-  })();
 </script>
 </body>
 </html>
