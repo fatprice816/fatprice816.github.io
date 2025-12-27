@@ -17,26 +17,23 @@
 
   <main>
     <!-- HERO / WORDMARK -->
-<section class="hero" id="home" aria-label="Hero">
-  <!-- Background video -->
-  <video class="hero-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-    <!-- Replace the src with your actual file path -->
-    <source src="assets/Website.mp4" type="video/webm" />
-    <!-- Optional MP4 fallback for browsers that don't support WebM -->
-    <source src="assets/Website.mp4" type="video/mp4" />
+<section class="hero">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src="Website.mp4" type="video/mp4" />
   </video>
 
-  <!-- Content overlay -->
-  <div class="hero-content">
-    <h1 class="wordmark">FAT PRICE</h1>
-    </div>
-    <div class="scroll-indicator" aria-hidden="true"></div>
+  <div class="hero-overlay">
+    <h1 class="wordmark">FAT&nbsp;PRICE</h1>
   </div>
-</section>
 
-	  <!-- SOCIAL LINKS -->
-<div class="social-links">
-	 <a href="https://tidal.com/artist/20567487"_blank">
+  <div class="hero-socials">
+ <a href="https://tidal.com/artist/20567487"_blank">
     <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/tidal.png" alt="Social Media Icon" style="width: 30px; height: 30px;">
 </a>
 
@@ -70,7 +67,8 @@
 	 <a href="fatprice@icloud.com" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/synology-mail-plus.png" alt="Social Media Icon" style="width: 30px; height: 30px;">
 </a>
-
+  </div>
+</section>
 
 <!-- STYLES -->
 <style>
