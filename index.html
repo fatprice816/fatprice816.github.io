@@ -17,16 +17,12 @@
 
   <main>
     <!-- HERO / WORDMARK -->
-<section class="hero">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src="Website.mp4" type="video/mp4" />
-  </video>
+  <!-- Background video -->
+  <video class="hero-bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <!-- Replace the src with your actual file path -->
+    <source src="assets/Website.mp4" type="video/webm" />
+    <!-- Optional MP4 fallback for browsers that don't support WebM -->
+    <source src="assets/Website.mp4" type="video/mp4" />
 
   <div class="hero-overlay">
     <h1 class="wordmark">FAT&nbsp;PRICE</h1>
