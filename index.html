@@ -1,38 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fat Price</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+  <!-- Optional header -->
   <header class="site-header">
     <nav class="nav">
+      <a href="#" class="nav-link">HOME</a>
     </nav>
   </header>
 
-  <main>
-<section class="hero">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src="Website.mp4" type="video/mp4" />
-  </video>
+  <!-- 🔥 HERO GOES HERE -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="Website.mp4" type="video/mp4" />
+    </video>
 
-  <div class="hero-overlay">
-    <h1 class="wordmark">FAT&nbsp;PRICE</h1>
-  </div>
+    <div class="hero-overlay">
+      <h1 class="wordmark">FAT&nbsp;PRICE</h1>
+    </div>
 
-  <div class="hero-socials">
-	 <a href="https://tidal.com/artist/20567487"_blank">
+    <div class="hero-socials">
+      <a href="https://tidal.com/artist/20567487"_blank">
     <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/tidal.png" alt="Social Media Icon" style="width: 30px; height: 30px;">
 </a>
 
@@ -66,251 +63,8 @@
 	 <a href="fatprice@icloud.com" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/synology-mail-plus.png" alt="Social Media Icon" style="width: 30px; height: 30px;">
 </a>
+    </div>
+  </section>
 
-  </div>
-</section>
-
-
-<!-- STYLES -->
-<style>
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .social-links a {
-    color: #C4C4C4;
-    display: inline-flex;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .social-links a:hover {
-    transform: scale(1.15);
-    color: #e63946; /* default hover color (red), change per icon if desired */
-  }
-
-  .social-links svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .social-links a {
-      color: #eee;
-    }
-    .social-links a:hover {
-      color: #1DB954; /* Spotify green works well in dark mode */
-    }
-  }
-</style>
-
-<style>
-  /* Container */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden; /* hide video overflow during scaling */
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-
-  /* Background video fills hero */
-  .hero .hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;           /* crop to fill without distortion */
-    object-position: center;     /* keep subject centered */
-    filter: saturate(1.1) contrast(1.05);
-    z-index: -1;                 /* sit behind content */
-  }
-
-  /* Overlay content */
-  .hero .hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
-    color: #fff;
-  }
-
-  /* Optional: add a subtle dark gradient for readability */
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.35) 0%,
-      rgba(0,0,0,0.25) 30%,
-      rgba(0,0,0,0.35) 100%
-    );
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .wordmark {
-    font-size: clamp(2.5rem, 8vw, 7rem);
-    line-height: 1;
-    letter-spacing: 0.06em;
-    margin: 0 0 1rem;
-    font-weight: 800;
-  }
-
-  .platforms {
-    display: inline-flex;
-    gap: .75rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .pill {
-    display: inline-block;
-    padding: .6rem 1rem;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.12);
-    color: #fff;
-    text-decoration: none;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    transition: background .2s ease, transform .2s ease;
-  }
-  .pill:hover { background: rgba(255,255,255,0.22); transform: translateY(-1px); }
-
-  .scroll-indicator {
-    width: 2px; height: 36px; margin: 1.25rem auto 0;
-    background: linear-gradient(to bottom, rgba(255,255,255,.7), rgba(255,255,255,0));
-    border-radius: 2px;
-    position: relative;
-    overflow: hidden;
-  }
-  .scroll-indicator::before {
-    content: "";
-    position: absolute; left: 0; right: 0;
-    height: 10px; width: 100%;
-    background: #fff;
-    border-radius: 2px;
-    animation: scrollPulse 1.6s infinite ease-in-out;
-  }
-  @keyframes scrollPulse {
-    0% { top: 0; opacity: 0; }
-    20% { opacity: 1; }
-    100% { top: 26px; opacity: 0; }
-  }
-</style>
-
-
-    <!-- SUBSCRIBE -->
-
-
-	  
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2026 FAT PRICE</p>
-  </footer>
-
-  <script>
-    // simple scroll indicator animation
-    const scroll = document.querySelector('.scroll-indicator');
-    if (scroll) {
-      let t = 0;
-      setInterval(() => {
-        t = (t + 1) % 100;
-        scroll.style.backgroundPosition = `0 ${t}%`;
-      }, 40);
-    }
-
-    function showThanks(){
-      const d = document.getElementById('thanks');
-      if (d && typeof d.showModal === 'function') d.showModal();
-      else alert('Thank you for signing up!');
-    }
-  </script>
-
-<!-- STYLES -->
-<style>
-  .contact-section {
-    background: #f9f9f9; /* light neutral background */
-    padding: 4rem 1rem;
-    text-align: center;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .contact-section h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #111;
-    letter-spacing: -0.5px;
-  }
-
-  .contact-section p {
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-
-  .contact-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .btn-primary {
-    background: #111;
-    color: #fff;
-    padding: 0.9rem 2rem;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .btn-primary:hover {
-    background: #000;
-    transform: translateY(-1px);
-  }
-
-  .plain-link {
-    color: #333;
-    font-size: 1rem;
-    text-decoration: none;
-    font-family: monospace;
-  }
-
-  .plain-link:hover {
-    text-decoration: underline;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .contact-section {
-      background: #111;
-      border-color: #333;
-    }
-    .contact-section h2,
-    .contact-section p,
-    .plain-link {
-      color: #eee;
-    }
-    .btn-primary {
-      background: #fff;
-      color: #111;
-    }
-    .btn-primary:hover {
-      background: #e5e5e5;
-    }
-  }
-</style>
-</script>
 </body>
 </html>
